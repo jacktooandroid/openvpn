@@ -1096,13 +1096,12 @@ function newClient() {
 		#else # if not SUDO_USER, use /root
 		#	homeDir="/root"
 		#fi
-	sudo mkdir /OVPN_Certificates
 	if [ -e "/home/$CLIENT" ]; then # if $1 is a user name
-		homeDir="/OVPN_Certificates"
+		homeDir="/home/OVPN_Certificates"
 	elif [ "${SUDO_USER}" ]; then # if not, use SUDO_USER
-		homeDir="/OVPN_Certificates"
+		homeDir="/home/OVPN_Certificates"
 	else # if not SUDO_USER, use /root
-		homeDir="/OVPN_Certificates"
+		homeDir="/home/OVPN_Certificates"
 	fi
 
 	# Determine if we use tls-auth or tls-crypt
